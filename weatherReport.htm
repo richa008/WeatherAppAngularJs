@@ -1,0 +1,19 @@
+    
+    <div class="row col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading ">
+                <h3 class="panel-title"> {{ convertToDate( {dt: weatherDay.dt} ) | date: dateFormat }}</h3>                  
+            </div>
+            <div class="panel-body">
+                <p>Day time temperature : {{ convertTemperatureUnit( {degK : weatherDay.temp.day} ) }} F</p>
+                <p>Night time temperature : {{ convertTemperatureUnit( {degK : weatherDay.temp.night} ) }} F</p>
+                <p>Humidity: {{ weatherDay.humidity }} %</p>
+                <div ng-repeat="w in weatherDay.weather">
+                    <p>
+                        <b> {{ w.main }} :</b>
+                        <span> {{ w.description }}</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,17 @@
+Forecast for {{ weatherResult.city.name }}, {{ weatherResult.city.country }}
+
+<hr/>
+<p>
+    Days: <a href="#/forecast/2">2</a> | <a href="#/forecast/5">5</a> | <a href="#/forecast/7">7</a>
+</p>
+<hr/>
+<div ng-repeat="w in weatherResult.list">
+    
+    <weather-report weather-day="w" convert-temperature-unit="convertToFarenheit(degK)" convert-to-date="convertDate(dt)" date-format="d MMM, y"></weather-report>
+</div>
+
+<hr/>
+
+<p>
+    <a href="#/"> Back to search </a>
+</p>
